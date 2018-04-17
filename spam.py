@@ -1,14 +1,14 @@
 import requests
 i = int(input('Enter A Number:'))
-webhook = "Your WebHook"
-amount_of_messages = 0
-message = " "
+webhook = "Your WebHook" 
+amount_of_messages = 0 #dont change
+message = " " #dont change
 while amount_of_messages < i:
     amount_of_messages += 1
     message += "Your message" + "\n"
 discordInter = {
     "username": "WhatEverName You want",
-    "content": message
+    "content": message #dont change
 }
 
 myHeaders = {
