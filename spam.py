@@ -3,7 +3,7 @@ from time import sleep
 
 
 def Spam():
-    webhook = "YoUR WEBHOOK GOES HERE"
+    webhook = "YOUR WEBHOOK GOES HERE"
 
     message = " "
     message += "TYPE MESSSAGE HERE" + "\n"
