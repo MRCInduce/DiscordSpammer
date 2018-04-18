@@ -1,16 +1,14 @@
 import requests
+from time import sleep
 
 
 def Spam():
-    i = int(input('Enter A Number:'))
-    webhook = "YOUR WEBHOOK HERE"
-    amount_of_messages = 0
+    webhook = "YoUR WEBHOOK GOES HERE"
+
     message = " "
-    while amount_of_messages < i:
-        amount_of_messages += 1
-        message += "PLEASE INPUT UR MESSAGE HERE" + "\n"
+    message += "TYPE MESSSAGE HERE" + "\n"
     discordData = {
-        "username": "",
+        "username": "NAME",
         "content": message
     }
 
@@ -21,8 +19,27 @@ def Spam():
     discordResponse = requests.post(webhook, headers=myHeaders, json=discordData)
 
 
-print("Input How Many Times You Wanna Loop")
-loop = int(input('Enter A Number Smaller Then 5'))
-destroy = 0
-while destroy < loop:
-    Spam()
+def loopSpam():
+    destroy = 0
+    loop = 1
+    while destroy < loop:
+        destroy = 0
+        sleep(1.0)
+        Spam()
+
+
+def limitSpam():
+    amount = int(input("Number:"))
+    limiter = 0
+    while limiter < amount:
+        Spam()
+        limiter += 1
+
+
+print("Do You Want To Have A Infinite Spam Or A Certain Amount")
+print("Type Spam or Limit(with caps!)")
+choice = str(input())
+if choice == "Spam":
+    loopSpam()
+if choice == 'Limit':
+    limitSpam()
